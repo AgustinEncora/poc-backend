@@ -13,8 +13,8 @@ const validate = (schema) => (req, res, next) => __awaiter(void 0, void 0, void 
     try {
         yield schema.parseAsync({
             body: req.body,
-            query: req.query,
-            params: req.params
+            params: req.params,
+            query: req.query
         });
         return next();
     }
@@ -22,7 +22,7 @@ const validate = (schema) => (req, res, next) => __awaiter(void 0, void 0, void 
         const error_message = JSON.parse(err.message);
         return res.status(400).json({
             status: "Bad Request!",
-            message: error_message[0].message + "Otario"
+            message: error_message[0].message
         });
     }
 });

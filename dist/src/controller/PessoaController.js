@@ -16,8 +16,8 @@ class PessoaController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const newPessoa = new Pessoas_1.Pessoa();
-                newPessoa.firstName = req.body.first_name;
-                newPessoa.lastName = req.body.last_name;
+                newPessoa.firstName = req.body.firstName;
+                newPessoa.lastName = req.body.lastName;
                 newPessoa.age = req.body.age;
                 newPessoa.email = req.body.email;
                 yield new PessoasRepo_1.PessoasRepo().save(newPessoa);
@@ -94,8 +94,9 @@ class PessoaController {
             try {
                 const id = parseInt(req.params["id"]);
                 const newPessoa = new Pessoas_1.Pessoa();
-                newPessoa.firstName = req.body.first_name;
-                newPessoa.lastName = req.body.last_name;
+                newPessoa.id = id;
+                newPessoa.firstName = req.body.firstName;
+                newPessoa.lastName = req.body.lastName;
                 newPessoa.age = req.body.age;
                 newPessoa.email = req.body.email;
                 yield new PessoasRepo_1.PessoasRepo().update(newPessoa);

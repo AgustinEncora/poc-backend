@@ -8,12 +8,13 @@ class APP {
     constructor() {
         this.app = express();
         this.databaseSync();
+        this.plugins();
         this.routes();
     }
 
     protected plugins(): void {
         this.app.use(express.json());
-        this.app.use(express,urlencoded({ extended: true }));
+        this.app.use(express.urlencoded({ extended: true }));
     }
 
     protected databaseSync() {

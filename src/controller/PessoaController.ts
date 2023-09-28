@@ -6,8 +6,8 @@ class PessoaController{
     async create( req: Request, res: Response){
         try{
             const newPessoa = new Pessoa();
-            newPessoa.firstName = req.body.first_name;
-            newPessoa.lastName = req.body.last_name;
+            newPessoa.firstName = req.body.firstName;
+            newPessoa.lastName = req.body.lastName;
             newPessoa.age = req.body.age;
             newPessoa.email = req.body.email;
 
@@ -82,8 +82,9 @@ class PessoaController{
             const id = parseInt(req.params["id"]);
             
             const newPessoa = new Pessoa();
-            newPessoa.firstName = req.body.first_name;
-            newPessoa.lastName = req.body.last_name;
+            newPessoa.id = id;
+            newPessoa.firstName = req.body.firstName;
+            newPessoa.lastName = req.body.lastName;
             newPessoa.age = req.body.age;
             newPessoa.email = req.body.email;
 
